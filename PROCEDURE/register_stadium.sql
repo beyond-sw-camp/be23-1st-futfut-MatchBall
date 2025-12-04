@@ -17,11 +17,11 @@ BEGIN
 
     IF v_count > 0 THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = '이미 존재하는 구장 이름입니다.';
+            SET MESSAGE_TEXT = '이미 존재하는 구장 이름입니다.';
     END IF;
 
     -- 신규 구장 생성
-    INSERT INTO stadium(name, 위치, condition, max_count)
+    INSERT INTO stadium(name, location, condition_text, max_count)
     VALUES (p_name, p_location, p_condition, p_max_count);
 
     -- 생성된 stadium ID 반환
