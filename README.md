@@ -57,15 +57,9 @@ Futsal-MatchDB는 사용자들이 간편하게 풋살 경기를 신청하고 매
 ---
 
 ## 📸 스크린샷 / 요구사항 명세  
-요구사항 명세 또는 기획 UI, 설계 문서 등을 스크린샷으로 포함해 프로젝트 전체 흐름과 설계를 보여줄 수 있어요:
+요구사항 명세서
 
-<img src="https://github.com/user-attachments/assets/65b48495-1562-42e3-a374-b9b2c034b471" width="80%" alt="요구사항 명세 1" />
-
-<img src="https://github.com/user-attachments/assets/a7510a36-17f1-4e84-a542-37c766c054d5" width="80%" alt="요구사항 명세 2" />
-
-<img src="https://github.com/user-attachments/assets/b695ed51-72d7-426b-9823-7535e8b602f0" width="80%" alt="요구사항 명세 3" />
-
----
+https://docs.google.com/spreadsheets/d/1JPzOK-3ZNih2dvhaKj_woaxKXlj8aVoJJ0jWgI7P8M4/edit?gid=683578131#gid=683578131
 
 ## 👥 팀원 소개 (Developers)  
 
