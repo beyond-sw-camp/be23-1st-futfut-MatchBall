@@ -2,24 +2,23 @@
 
 
  
- ![image](https://github.com/user-attachments/assets/dadfcc5b-6fe6-4d4c-b91a-b9e170490b9c)
+ ![image](https://github.com/LittleNiddle/DB_Team_GH/issues/8#issue-3697335727)
+ 
 
- 🚂 Porail 🚂
+  ⚽ 풋살 매칭 DB 프로젝트 – Futsal-MatchDB 
 
-**팀명: POMON**
+**팀명: FutFut**
 
 **팀원**
-권수연, 김송옥, 임진우, 조은성
+황건하, 이수림, 박준형, 정민정
 
 ## 스택
 <p>
-<img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
-<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
-<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white">  
+<img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white">  
+<img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white">  
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">  
+
 </p>
 
 
@@ -27,22 +26,19 @@
 ![image](https://github.com/user-attachments/assets/8d9130ff-da64-4526-8c65-6d2eb78897d8)
 
 
-복잡한 기차 예매 시스템을 구축하여 테스트를 해볼 수 있도록 서비스를 기획해 보았습니다.
-
-특정 노선 안에서 상세 구간 별로 좌석을 관리해야 하는 복잡함을 DB 설계를 통해 경험해 볼 수 있었습니다.
+잡한 풋살 경기 매칭 + 예약 + 정산 + 히스토리 관리를 DB 중심으로 처리할 수 있도록 설계된 플랫폼입니다.  
+사용자(회원)는 팀 없이도 경기에 신청/참여할 수 있고,  
+관리자는 경기 생성, 매칭, 정산 관리를 할 수 있어요.  
+데이터베이스 + SQL + 자동화 로직 기반으로,  
+“누구나 쉽게, 공정하게, 투명하게” 풋살 경기를 즐길 수 있는 환경을 만드는 것이 목표입니다.
 
 
 ### ✨ 주요 기능
 
-  1. 역 조회 : 등록되어 있는 모든 역을 조회할 수 있습니다.
-  
-  2. 운행 시간 조회 : 지정한 역 내에서 이용 가능한 시간 대를 조회할 수 있습니다.  
-  
-  3. 빈 좌석 조회 : 특정 역과 구간 대의 비어있는 좌석 목록을 조회할 수 있습니다. 
-  
-  4. 예매 : 앞서 선택한 정보를 토대로 특정 좌석에 대한 점유를 할 수 있습니다. 
-  
-  5. 결제 : 예매 내역으로 가져온 정보를 결제를 통해 예매 완료 상태로 변경할 수 있습니다.
+1. 회원: 경기 신청, 결제, 취소/환불, POM 투표  
+2. 심판/매칭: 경기 생성, 신청 인원 체크 → 매칭 또는 환불  
+3. 결제 / 환불 / 정산  
+4. 조회 / 내역 조회 기능 (경기 목록, 신청 내역, 결제/환불 내역, 구장 상세, 히스토리)  
 
 ---
 
