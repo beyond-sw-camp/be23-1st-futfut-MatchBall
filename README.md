@@ -1,251 +1,584 @@
 
-_풋살 매칭 DB 프로젝트 – 데이터베이스 중심 풋살 경기 매칭 & 정산 & 히스토리 관리 플랫폼_  
 
-> 실제 사용자 기반 **풋살 경기 매칭 시스템**  
-> _DB 중심의 예약 / 매칭 / 참여 / 정산 / 히스토리 관리 플랫폼_  
 
----
+ 
+ ![image](https://github.com/user-attachments/assets/dadfcc5b-6fe6-4d4c-b91a-b9e170490b9c)
 
-## 🔷 프로젝트 개요  
-Futsal-MatchDB는 사용자들이 간편하게 풋살 경기를 신청하고 매칭된 경기에 참여하며,  
-참가비 정산과 경기 히스토리 관리까지 한 번에 처리할 수 있도록 설계된 데이터베이스 중심 시스템입니다.  
+ 🚂 Porail 🚂
 
-- 경기 매칭  
-- 참가자 관리  
-- 금액 정산  
-- 경기 이력(히스토리) 관리까지 — DB 레벨에서 통합 관리  
+**팀명: POMON**
 
----
+**팀원**
+권수연, 김송옥, 임진우, 조은성
 
-## 💡 배경 및 필요성  
+## 스택
+<p>
+<img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+</p>
 
-### 🎯 왜 이 프로젝트를 시작했나  
 
-- “이번 주말에 운동할 수 있을까?” — 팀이 없어도, 친구가 없어도,  
-  원하는 시간과 장소에 맞춰 편하게 풋살 경기에 참여하고 싶은 사람들이 많아요.  
-- 하지만 실제로는  
-  - 팀원 모집이 번거롭고,  
-  - 친구가 없으면 참여가 어렵거나,  
-  - 일정/장소/인원 맞추기가 힘들어서  
-  운동을 하고 싶어도 쉽게 못 가는 경우가 많습니다.  
-- 또한, 카카오톡 오픈채팅, SNS, 단톡방 등으로 수동 매칭을 하더라도  
-  - 모집에 시간이 걸리거나 정보가 부족하고,  
-  - 참가비 정산 및 기록 관리가 번거롭고 누락되기 쉽습니다.  
+### 💡 프로젝트 개요
+![image](https://github.com/user-attachments/assets/8d9130ff-da64-4526-8c65-6d2eb78897d8)
 
-> 이런 현실적 불편을 해결하고,  
-> “누구나, 언제든, 혼자여도” 편하게 풋살을 즐길 수 있는 환경을 만들고 싶었습니다.  
 
-### 🌍 왜 DB 중심인가  
+복잡한 기차 예매 시스템을 구축하여 테스트를 해볼 수 있도록 서비스를 기획해 보았습니다.
 
-- 단순한 채팅/모집 방식이 아니라,  
-  “데이터 + 자동화 + 정산 + 기록 + 통계” 기반으로  
-  누구나 공정하고 투명하게 이용 가능한 플랫폼이 될 수 있어요.  
-- 참가 기록, 경기 이력, 결제/환불 내역이 DB에 남기 때문에  
-  사용자 입장에서도 안정성과 신뢰성이 확보됩니다.  
-- 단회성이 아니라, 장기적으로  
-  “참여 통계 / 인기 구장/시간대 분석 / 사용자 히스토리 관리 / 재참여 유도” 등  
-  확장 가능한 플랫폼 구조를 갖추게 됩니다.  
+특정 노선 안에서 상세 구간 별로 좌석을 관리해야 하는 복잡함을 DB 설계를 통해 경험해 볼 수 있었습니다.
+
+
+### ✨ 주요 기능
+
+  1. 역 조회 : 등록되어 있는 모든 역을 조회할 수 있습니다.
+  
+  2. 운행 시간 조회 : 지정한 역 내에서 이용 가능한 시간 대를 조회할 수 있습니다.  
+  
+  3. 빈 좌석 조회 : 특정 역과 구간 대의 비어있는 좌석 목록을 조회할 수 있습니다. 
+  
+  4. 예매 : 앞서 선택한 정보를 토대로 특정 좌석에 대한 점유를 할 수 있습니다. 
+  
+  5. 결제 : 예매 내역으로 가져온 정보를 결제를 통해 예매 완료 상태로 변경할 수 있습니다.
 
 ---
 
-## 🛠 기술 스택  
-- Java  
-- Spring Boot  
-- MariaDB (MySQL 호환)  
-- Git / GitHub  
+## 🗓️ 개발일정
+(https://github.com/beyond-sw-camp/be16-1st-pomon-porail/blob/main/images/pomon_WBS.pdf)
+![image](https://github.com/user-attachments/assets/e477754b-af8a-429b-a69b-df0f4c1c460b)
+
+
 
 ---
-## 📸 WBS
-
-
-https://docs.google.com/spreadsheets/d/15mv_HFfrBDOVx1moqOOfM73TAg8AAwi4XHlgErBfDnY/edit?gid=581320607#gid=581320607
-<img width="525" height="660" alt="image" src="https://github.com/user-attachments/assets/e518d62c-1841-4940-a67e-a50a76cff30e" />
-
-
-## 📸 스크린샷 / 요구사항 명세  
-
-요구사항 명세서
-https://docs.google.com/spreadsheets/d/1JPzOK-3ZNih2dvhaKj_woaxKXlj8aVoJJ0jWgI7P8M4/edit?gid=683578131#gid=683578131
-
-
-
-
-## 👥 팀원 소개 (Developers)  
-
-| 이름   | 포지션            | 역할 / 담당 영역 |
-|--------|-------------------|------------------|
-| 수림   | Core Logic        | 회원 기능 — 경기 신청 / 취소 / 환불, POM 투표 로직 등 |
-| 준형   | Core Logic        | 심판 기능, 경기 오픈 / 매칭 & 결제/환불 처리 로직 |
-| 건하   | View / Data       | 조회 기능 전반 — 경기 목록, 신청/매칭/결제/환불/투표/히스토리 조회 등 |
-| 민정   | 기획 참여 / 문서 정리 only | 기획 참여 + 문서 구성, README 및 문서 구조 설정  <br>*(기능 구현은 맡지 않음)* |
+## 📝 요구사항정의서
+https://docs.google.com/spreadsheets/d/1gdGj_EBp2M7_fcxvqu37rU1ii0QhVpNG5HjycodgGc8/edit?gid=933404418#gid=933404418
+![image](https://github.com/user-attachments/assets/d1dd0f56-9047-4fee-b7ca-0d79e3d4732e)
 
 ---
+## 📋 ERD
+![image](https://github.com/user-attachments/assets/692beb9c-a222-4fdc-984d-7a7289ab704f)
 
-## 📄 주요 기능 / 요구사항 요약  
-
-### 🔹 회원 기능 (Member)  
-| ID      | 기능              | 설명 |
-|---------|-------------------|------|
-| MEM-001 | 매칭 신청 (결제)  | 경기를 신청하고 결제 — 최대 수용 인원 이하일 때만 허용 |
-| MEM-002 | 매칭 취소 / 환불  | 신청/결제한 경기 취소 및 환불 — 경기 시작 1시간 전까지 가능 |
-| MEM-003 | POM 투표          | 경기 종료 후 참여자들이 POM 투표 가능 |
-
-### 🔹 심판 기능 (Referee)  
-| ID         | 기능      | 설명 |
-|------------|-----------|------|
-| REFEREE-001 | 경기 Open | 경기를 생성 / 오픈 가능 |
-
-### 🔹 경기 신청 조건 (Apply)  
-| ID        | 조건 / 기능         | 설명 |
-|-----------|----------------------|------|
-| APPLY-001 | 신청 불가 조건       | 현재 인원 + 요청 인원이 최대 인원(18명) 초과 → 신청/결제 불가 |
-| APPLY-002 | 신청 가능 조건       | 현재 인원이 최대 인원 미만일 경우 신청/결제 가능 |
-
-### 🔹 매칭 (Match)  
-| ID        | 기능        | 설명 |
-|-----------|-------------|------|
-| MATCH-001 | 매칭 성공   | 경기 시작 1시간 전까지 신청 인원이 최소 인원(10명) 이상일 경우 매칭 확정 |
-| MATCH-002 | 매칭 실패   | 신청 인원 10명 미만일 경우 매칭 실패 → 환불 처리 |
-
-### 🔹 POM 선정 기능  
-| ID        | 기능       | 설명 |
-|-----------|------------|------|
-| POM-001   | POM 선정   | 투표 결과에 따라 득표 가장 많은 사람을 POM으로 선정 및 기록 |
-
-### 🔹 결제 / 환불 (Payment / Refund)  
-| ID        | 기능       | 설명 |
-|-----------|------------|------|
-| PAY-001   | 결제       | 경기 선택 후 결제 처리 |
-| PAY-002   | 결제 취소  | 결제 내역 기반으로 취소 가능 (예: 일정 기간 전) |
-| RE-001    | 환불       | 매칭 실패 또는 취소 조건에 따라 환불 처리 |
-
-### 🔹 조회 / 내역 조회 기능 (Select / Query)  
-| ID         | 조회 항목 / 기능           | 설명 |
-|------------|-----------------------------|------|
-| SELECT-001 | 경기 목록 조회              | 지역 / 날짜 / 시간 조건으로 신청 가능한 경기 목록 조회 |
-| SELECT-002 | 신청 내역 조회              | 회원이 신청한 경기의 시간, 날짜, 구장 등 조회 |
-| SELECT-003 | 이전 매칭 내역 조회         | 회원의 전체 매칭 이력 조회 |
-| SELECT-004 | 현재 매칭 내역 조회         | 해당 경기의 참여 인원, 참여자 정보, 매칭 상태 조회 |
-| SELECT-005 | 투표 내역 조회             | 본인이 투표한 경기 정보 조회 |
-| SELECT-006 | 본인 POM 내역 조회         | 자신이 POM 받은 기록 조회 |
-| SELECT-007 | 결제 내역 조회              | 신청 경기 이용 날짜, 구장, 결제 금액 조회 |
-| SELECT-008 | 환불 내역 조회              | 신청 경기 이용 날짜, 구장, 환불 금액 조회 |
-| SELECT-009 | 구장 상세 내역 조회         | 구장 정보 + 편의시설 여부 조회 |
-| SELECT-010 | 심판 정산 내역 조회         | 심판의 정산 내역 조회 |
-| SELECT-011 | 개인정보 조회 (마이페이지)   | 회원/심판의 마이페이지 정보 조회 |
 
 ---
+### 🖌️ 주요 쿼리 요약
 
-## 📁 WBS (Work Breakdown Structure) / 진행 현황  
+#### DDL
 
-| #  | 단계 / 작업 항목                  | 설명 / 산출물                        | 담당자             | 진행률 |
-|----|----------------------------------|--------------------------------------|--------------------|--------:|
-| 1  | 요구사항 정의 & 기능 명세 작성       | 기능 목록 정리, 요구조건 문서화             | 수림, 준형, 건하, 민정 | 100% ✅ |
-| 2  | 문서 구조 설정 & 초기 리포지토리 구성 | README                                   | 민정                | 100% ✅ |
-| 3  | DB 모델링 & 설계                  | ERD 설계, 주요 테이블 구조 정의           | 준형, 수림           | 100% ✅ |
-| 4  | SQL 스크립트 작성 (DDL / DML)      | 테이블 생성 스크립트, 초기/테스트 데이터 삽입 | 준형, 수림           | 100% ✅ |
-| 5  | 요구사항 명세서 / 문서 정리        | requirements 문서화, 기능/쿼리 명세 정리     | 민정                | 100% ✅ |
-| 6  | 테스트 케이스 설계                 | 쿼리 테스트 시나리오 및 검증 케이스 작성     | 건하, 수림           | 100% ✅ |
-| 7  | README + 프로젝트 설명 정리        | 프로젝트 개요, 배경, 기능 요약 등 README 완성 | 전원                | 100% ✅ |
+<details>
+<summary><b>테이블 생성 DDL</b></summary>
+	
+```sql
+create table member(
+seq bigint auto_increment, member_id varchar(255) not null, password varchar(255) not null,
+name varchar(255) not null, email varchar(255) not null unique, tp_no char(13) not null,
+point_score bigint not null default 0, member_type enum('관리자', '회원') default '회원' not null,
+del_yn enum('Y','N') default 'N' not null,create_at datetime not null default current_timestamp,
+update_at datetime not null default current_timestamp on update current_timestamp,
+primary key(seq));
 
----
+    
+create table payment(
+	seq bigint auto_increment, amount bigint not null, type enum('신한', '우리', '국민') not null,
+  reservation_seq bigint not null,
+	create_at datetime not null default current_timestamp,
+	update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
 
-## 🏁 프로젝트 한줄 요약  
-풋살 매칭 시스템은 단순 예약을 넘어, 정산과 경기 이력 관리까지 가능한 **스마트 경기 플랫폼**을 목표로 합니다.  
-DB 중심 설계 + SQL + 자동화 로직으로 “같이 뛸 사람, 장소, 시간, 비용, 기록”을 한 번에 관리하는 시스템입니다.
+create table reservation(
+	seq bigint auto_increment, member_seq bigint not null, reservation_id varchar(100) not null,
+	status enum('예매 완료', '예매 취소') not null, create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq), foreign key(member_seq) references member(seq));
+    
+create table station(
+	seq bigint auto_increment, station_id varchar(255) not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+    
+create table station_detail(
+	seq bigint auto_increment, track int not null, station_seq bigint not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+    
+create table schedules(
+	seq bigint auto_increment, route_departure varchar(255) not null, route_destination varchar(255) not null,
+  route_departure_time datetime not null, route_destination_time datetime not null, train_seq bigint not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+    
+create table schedules_detail(
+	seq bigint auto_increment, taken_times time not null, departure varchar(255) not null,
+  destination varchar(255) not null, departure_time datetime not null, 
+  destination_time datetime not null, station_detail_seq bigint not null, schedules_seq bigint not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+    
+create table train(
+	seq bigint auto_increment, train_id varchar(255) not null, type enum('ktx', 'srt', '무궁화') not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+    
+create table seat(
+	seq bigint auto_increment, room_id varchar(10) not null, seat_id varchar(10) not null, train_seq bigint not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+    
+create table seat_management(
+	seq bigint auto_increment, reservation_seq bigint, is_available enum('true', 'false') not null default 'true',
+  price bigint not null, seat_seq bigint not null, schedules_detail_seq bigint not null,
+	create_at datetime not null default current_timestamp,
+  update_at datetime not null default current_timestamp on update current_timestamp,
+	primary key(seq));
+
+```
+</details>
+
+</div>
+</details>
+
+<hr>
+
+#### DML
+
+<details>
+<summary><b>테스트 데이터 입력 DML</b></summary>
+	
+```sql
+delimiter //
+
+-- 프로시저 생성
+create procedure insert_data()
+begin
+		DECLARE i INT DEFAULT 1;
+		DECLARE seat INT;
+    DECLARE v_price INT;
+    DECLARE sd_seq INT DEFAULT 1;
+    DECLARE train_seq INT DEFAULT 1;
+
+		-- 회원
+    insert into member(member_id, password, name, email, tp_no, point_score) values ('Tp44581', '12345', '권수연', 'tndusl49@naver.com', '010-3032-6432', '0');
+		insert into member(member_id, password, name, email, tp_no, point_score) values ('asdlkfj32', '12343', '조은성', 'tasdf9@naver.com', '010-3123-6123', '0');
+		insert into member(member_id, password, name, email, tp_no, point_score) values ('asdf123', '12341', '김송옥', 'tnasdf2249@naver.com', '010-1243-6522', '0');
+		insert into member(member_id, password, name, email, tp_no, point_score) values ('gsd234', '12342', '임진우', 'dtaasdg239@naver.com', '010-5324-6635', '0');
+		insert into member(member_id, password, name, email, tp_no, point_score, member_type) values ('sdf443581', '1234', '김선국', 'asdfasdfl49@naver.com', '010-3132-6640', '0', '관리자');
+		-- 기차
+		insert into train(train_id, type) values ('ktx001', 'ktx');
+		insert into train(train_id, type) values ('ktx005', 'ktx');
+		insert into train(train_id, type) values ('ktx075', 'ktx');
+		-- 역
+		insert into station(station_id) values ('서울');
+		insert into station(station_id) values ('광명');
+		insert into station(station_id) values ('대전');
+		insert into station(station_id) values ('동대구');
+		insert into station(station_id) values ('경주');
+		insert into station(station_id) values ('울산');
+		insert into station(station_id) values ('부산');
+		insert into station(station_id) values ('천안아산');
+		insert into station(station_id) values ('서대구');
+		insert into station(station_id) values ('김천구미');
+		insert into station(station_id) values ('오송');
+		
+		WHILE train_seq <= 3 DO
+    SET i = 1;
+		    WHILE i <= 180 DO
+		        INSERT INTO seat(room_id, seat_id, train_seq) VALUES
+		        (
+		            CONCAT(FLOOR((i - 1) / 60) + 1, '호차'),                 -- room_id: 1호차, 2호차, 3호차
+		            CONCAT(
+		                FLOOR(((i - 1) % 60) / 4) + 1,                      -- row_no: 1~15
+		                CHAR(65 + ((i - 1) % 4))                            -- col: A~D
+		            ),
+		            train_seq                                              -- train_seq: 1, 2, 3
+		        );
+		        SET i = i + 1;
+		    END WHILE;
+		    SET train_seq = train_seq + 1;
+		END WHILE;
+		
+		set i=1;
+		WHILE i <= 11 DO
+        INSERT INTO station_detail(track, station_seq) VALUES (1, i);
+        INSERT INTO station_detail(track, station_seq) VALUES (2, i);
+        INSERT INTO station_detail(track, station_seq) VALUES (3, i);
+        INSERT INTO station_detail(track, station_seq) VALUES (4, i);
+        SET i = i + 1;
+    END WHILE;
+		
+		-- 스케줄 추가 (전체 여정)
+	  insert into schedules(route_departure, route_destination, route_departure_time, route_destination_time, train_seq) values
+    ('서울', '부산', '2025-06-09 05:13:00', '2025-06-09 07:50:00', 1);
+    insert into schedules(route_departure, route_destination, route_departure_time, route_destination_time, train_seq) values
+    ('서울', '부산', '2025-06-09 05:58:00', '2025-06-09 08:43:00', 2);
+    insert into schedules(route_departure, route_destination, route_departure_time, route_destination_time, train_seq) values
+    ('서울', '부산', '2025-06-09 06:03:00', '2025-06-09 08:49:00', 3);
+		
+		insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq) values
+        (TIMEDIFF('2025-06-09 05:30:00', '2025-06-09 05:13:00'), '서울', '광명', '2025-06-09 05:13:00', '2025-06-09 05:30:00', 2, 1);
+    
+    insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq) values
+        (TIMEDIFF('2025-06-09 06:12:00', '2025-06-09 05:32:00'), '광명', '대전', '2025-06-09 05:32:00', '2025-06-09 06:12:00', 6, 1);
+    
+    insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq) values
+        (TIMEDIFF('2025-06-09 06:56:00', '2025-06-09 06:14:00'), '대전', '동대구', '2025-06-09 06:14:00', '2025-06-09 06:56:00', 10, 1);
+        
+    insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq) values
+        (TIMEDIFF('2025-06-09 07:15:00', '2025-06-09 06:58:00'), '동대구', '경주', '2025-06-09 06:58:00', '2025-06-09 07:15:00', 14, 1);
+        
+    insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq) values
+        (TIMEDIFF('2025-06-09 07:27:00', '2025-06-09 07:16:00'), '경주', '울산', '2025-06-09 07:16:00', '2025-06-09 07:27:00', 18, 1);
+        
+    insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq) values
+        (TIMEDIFF('2025-06-09 07:50:00', '2025-06-09 07:29:00'), '울산', '부산', '2025-06-09 07:29:00', '2025-06-09 07:50:00', 22, 1);
+
+		WHILE sd_seq <= 6 DO
+        -- sd_seq별 가격 지정
+        IF sd_seq = 1 THEN SET v_price = 8400;
+        ELSEIF sd_seq = 2 THEN SET v_price = 21200;
+        ELSEIF sd_seq = 3 THEN SET v_price = 19700;
+        ELSEIF sd_seq = 4 THEN SET v_price = 8400;
+        ELSEIF sd_seq = 5 THEN SET v_price = 8400;
+        ELSEIF sd_seq = 6 THEN SET v_price = 8400;
+        END IF;
+
+        SET seat = 1;
+        WHILE seat <= 180 DO
+            INSERT INTO seat_management (
+                reservation_seq, is_available, price, seat_seq, schedules_detail_seq
+            ) VALUES (
+                NULL, 'true', v_price, seat, sd_seq
+            );
+            SET seat = seat + 1;
+        END WHILE;
+
+        SET sd_seq = sd_seq + 1;
+    END WHILE;
+
+	-- 2번 회원 (서울 -> 대전 // 1호차 3B (seat_seq=10) // 프로그램에서는 한 트랜잭션 (예매 + 결제)
+    insert into reservation(member_seq, reservation_id, status) values
+        (2, concat('res', date_format(now(), '%y%m%d'), '-', lpad(2, 5, '0')), '예매 완료');
+    update seat_management set is_available='false', reservation_seq=1 where seat_seq=10 and schedules_detail_seq=1;
+    update seat_management set is_available='false', reservation_seq=1 where seat_seq=10 and schedules_detail_seq=2;
+    -- 결제 내역
+    INSERT INTO payment(amount, type, reservation_seq)
+		SELECT 
+		    SUM(price), '신한', 1
+		FROM 
+		    seat_management
+		WHERE 
+		    (seat_seq = 10 AND schedules_detail_seq = 1)
+		    OR (seat_seq = 10 AND schedules_detail_seq = 2);
+		
+end //
+delimiter ;
+
+```
+</details>
+
+</div>
+</details>
+
+<hr/>
+
+#### 주요 기능 프로시저
+
+<details>
+<summary><b>회원</b></summary>
+	
+```sql
+--1. 회원가입
+
+delimiter //
+create procedure user_join(
+in memberIdInput varchar(255), 
+in passwordInput varchar(255), 
+in nameInput varchar(255), 
+in emailInput varchar(255),
+in tpNoInput char(13))
+
+begin
+	declare memberId varchar(255);
+    select member_id into memberId from member where email = emailInput;
+    if memberId is not null then
+    select '이미 존재하는 아이디입니다.';
+    else
+    insert into member(member_id, password, name, email, tp_no) 
+    values(memberIdInput, passwordInput, nameInput, emailInput, tpNoInput); 
+    end if;
+end
+// delimiter ;
+
+-- 2. 비밀번호 변경
+
+delimiter //
+create procedure pw_change(
+in idInput bigint,
+in passwordInput varchar(255))
+begin
+	declare memberPw varchar(255);
+    declare memberId bigint;
+    select seq, password into memberId,memberPw from member where seq = idInput;
+		if memberId is null then
+		select '존재하지 않는 유저입니다.';
+		elseif memberPw =passwordInput then
+		select '기존 비밀번호와 동일합니다.';
+		else 
+		update member set password =passwordInput where id=idInput;
+        select '비밀번호 변경이 완료되었습니다.';
+		end if;
+    end
+    // delimiter ;
+    
+--  3. 회원탈퇴
+    delimiter //
+create procedure member_delete(
+in idInput bigint)
+begin
+	update member set del_yn = 'Y' where seq=idInput;
+    select '회원 탈퇴가 완료되었습니다.';
+end;
+// delimiter ;
+
+-- 4. 로그인
+
+delimiter //
+create procedure user_login(
+in idInput varchar(255),
+in pwInput varchar(255))
+begin
+	declare count int;
+    
+ select count(*) into count from member where 
+ member_id= idInput and password = pwInput;
+ 
+ if count=1 then
+ select '로그인이 완료되었습니다.';
+ else 
+ select '아이디 또는 비밀번호가 일치하지 않습니다.';
+ end if;
+end 
+// delimiter ;
+ -- 5. 아이디 찾기
+delimiter //
+create procedure id_search(
+in emailInput varchar(255))
+begin
+declare memberId varchar(255);
+select member_id into memberId from member where email = emailInput;
+	if memberId is not null then
+	 select concat('고객님의 아이디는: ', memberId, ' 입니다.') as message ;
+	else
+    select '이메일이 일치하지 않습니다.';
+    end if;
+end;
+ // delimiter ;
+
+-- 6. 비밀번호 찾기
+delimiter //
+create procedure pw_search(
+in idInput varchar(255),
+in emailInput varchar(255))
+begin
+declare memberPw varchar(255);
+select password into memberPw from member where member_id= idInput and email = emailInput;
+	if memberPw is not null then
+	 select concat('고객님의 비밀번호는: ', memberPw, ' 입니다.') as message ;
+	else
+    select '아이디 또는 이메일이 일치하지 않습니다.';
+    end if;
+end;
+ // delimiter ;
+
+```
+</details>
+
+</div>
+</details>
+
+<details>
+<summary><b>결제 </b></summary>
+	
+```sql
+// 결제 + 마일리지 추가
+
+select * from payment;
+delimiter //
+create procedure pay(
+in reservationId int,
+in payType varchar(255))
+begin
+declare reservId int;
+declare seatPrice bigint;
+declare member_id bigint;
+declare point bigint;
+
+select sum(sm.price), r.seq into seatPrice, reservId 
+from reservation r inner join seat_management sm on 
+r.seq = sm.reservation_seq; 
+
+if reservId is not null then
+insert into payment(amount,type,reservation_seq) 
+values(seatPrice, payType, reservId);
+
+update member m join reservation r on m.seq = r.member_seq
+set m.point_score = m.point_score + (seatPrice/0.05); 
+end if;
+end;
+
+// delimiter ;
 
 
-# Futsal-MatchDB ⚽
 
-**팀명**: be23-1st-team2-DB  
-**프로젝트**: 풋살 매칭 DB 프로젝트 – 경기 매칭, 정산, 이력 관리까지 포함한 통합 시스템
+```
+</details>
 
----
+</div>
+</details>
 
-## 💡 프로젝트 개요  
-복잡한 풋살 경기 매칭 + 예약 + 정산 + 히스토리 관리를 DB 중심으로 처리할 수 있도록 설계된 플랫폼입니다.  
-사용자(회원)는 팀 없이도 경기에 신청/참여할 수 있고, 관리자는 경기 생성, 매칭, 정산 관리를 할 수 있어요.  
-데이터베이스 + SQL + 자동화 로직 기반으로, “누구나 쉽게, 공정하게, 투명하게” 풋살 경기를 즐길 수 있는 환경을 만드는 것이 목표입니다.
 
----
+<details>
+<summary><b>조회</b></summary>
+	
+```sql
+-- 회원(1) 회원가입
+start transaction;
 
-## 🛠 스택 / 사용 기술  
-<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=white">  
-<img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white">  
-<img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white">  
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">  
+-- 아이디 유효성 검사 
+select count(seq)
+from member
+where member_id = 'tndusl49@naver.com';
 
----
+insert into member(member_id, password, name, tp_no) values ('tndusl49@naver.com', 'Tp4458', '권수연', '010-3032-6640');
 
-## 📸 스크린샷 / 요구사항 명세  
-요구사항 명세 또는 기획 문서, 설계 이미지 등이 있다면 아래처럼 삽입해보세요:  
+commit;
 
-<img src="(요구사항 명세 1 이미지 URL or 경로)" width="80%" alt="요구사항 명세 1" />  
 
-<img src="(요구사항 명세 2 이미지 URL or 경로)" width="80%" alt="요구사항 명세 2" />  
 
-<img src="(요구사항 명세 3 이미지 URL or 경로)" width="80%" alt="요구사항 명세 3" />  
+-- 회원(2) 기차 시간 조회
+-- 열차 정보, 출발 시간, 출발 역, 도착 시간, 도착 역
+-- 사용자가 6월 7일 8시 이후에 서울 > 대전으로 이동한다고 가정.
+-- 열차 정보, 출발 시간, 출발 역, 도착 시간, 도착 역
+SELECT 
+    s.seq AS schedule_seq,
+    t.type,
+    t.train_id,
+    d1.departure_time AS 출발시간,
+    d1.departure AS 출발역,
+    d2.destination_time AS 도착시간,
+    d2.destination AS 도착역
+FROM 
+    schedules s
+INNER JOIN 
+    train t ON s.train_seq = t.seq
+INNER JOIN 
+    schedules_detail d1 ON s.seq = d1.schedules_seq AND d1.departure = '서울'
+INNER JOIN 
+    schedules_detail d2 ON s.seq = d2.schedules_seq AND d2.destination = '대전'
+WHERE 
+    d1.departure_time >= '2025-06-07 08:00:00';
 
----
+		
+		
+-- 회원(3) 예약 내역 상세 조회
+select r.seq as 예약번호, r.reservation_id as 예약명, r.update_at as 예약일
+, d.departure as 출발역, d.departure_time as 출발시간
+, d.destination as 도착역, d.destination_time as 도착시간
+, t.train_id as 기차명, s.room_id as 호차번호, s.seat_id as 좌석번호
+from reservation r inner join seat_management m on r.seq = m.reservation_seq
+inner join schedules_detail d on d.seq = m.schedules_detail_seq
+inner join seat s on s.seq = m.seat_seq
+inner join train t on t.seq = s.train_seq
+where r.member_seq = 2
+and r.update_at between '2025-01-01 :00:00:00' and now();
 
-## 👥 팀원 소개  
 
-| 이름   | 포지션                         | 역할 / 담당 영역 |
-|--------|------------------------------|------------------|
-| 수림   | Core Logic                   | 회원 기능 — 경기 신청 / 취소 / 환불, POM 투표 로직 등 |
-| 준형   | Core Logic                   | 심판 기능, 경기 오픈 / 매칭 & 결제/환불 처리 로직 |
-| 건하   | View / Data                  | 조회 기능 전반 — 경기 목록, 신청/매칭/결제/환불/투표/히스토리 조회 등 |
-| 민정   | 기획 참여 / 문서 정리 only    | 기획 참여 + 문서 구성, README 및 문서 구조 설정  *(기능 구현은 맡지 않음)* |
+-- 예약 가능한 기차 조회
+-- 관리자(4) 스케줄 & 스케줄상세 & 좌석관리 추가
+start transaction;
 
----
+-- train_seq 조회
+select seq 
+from train
+where train_id = 'ktx220';
 
-## 📝 주요 기능 / 요구사항 요약  
+-- 기차가 점유되는 시간을 조회 해야 하고, 등록 시간 내에 기차가 운행중인 스케줄이 있다면 등록 불가. 
+select 
+case 
+when seq is null
+then 'true' 
+else 'false'
+end as result
+from schedules  
+where train_seq = 1
+and route_departure_time >= '2025-06-07 08:10:00'
+and route_destination_time <= '2025-06-07 12:40:00';
 
-### 회원 기능  
-- 경기 신청 (결제) — 최대 수용 인원 이하일 경우  
-- 경기 취소 / 환불 — 경기 시작 1시간 전까지 가능  
-- 경기 종료 후 POM 투표  
+-- 스케줄 등록
+insert into schedules(route_departure, route_destination, route_departure_time, route_destination_time, train_seq) 
+values('서울', '부산', '2025-06-07 08:10:00', '2025-06-07 12:40:00', 1);
 
-### 심판 & 매칭 기능  
-- 경기 생성 / 오픈  
-- 신청 인원 + 조건에 맞춰 자동 매칭:  
-  - 매칭 성공: 최소 인원(예: 10명) 이상 → 경기 확정  
-  - 매칭 실패: 인원 부족 → 자동 환불  
+-- 출발지 정차번호가 출발시간과 도착시간에 이미 사용되고 있으면 스케줄 상세 등록 불가.
+-- why? 정차 track에 이미 다른 기차가 스케줄에 등록되어있어 정차 예정임
+-- 기차가 정차하면 2분동안 사용자를 태운다고 가정
+select 
+case 
+when seq is null
+        then 'true'
+        else 'false'
+end as result
+from schedules_detail
+where station_detail_seq = 1
+and departure_time between '2025-06-07 08:10:00' and '2025-06-07 08:12:00'
+or destination_time between '2025-06-07 08:10:00' and '2025-06-07 08:12:00';
 
-### 결제 / 환불 / 정산 기능  
-- 결제 처리  
-- 결제 취소 및 환불  
-- 매칭 실패 시 환불 처리  
+-- schedules_seq 조회
+select seq
+from schedules
+where route_departure = '서울'
+and route_destination = '부산';
 
-### 조회 / 내역 조회 기능  
-- 경기 목록 조회 (지역 / 날짜 / 시간 필터)  
-- 내 신청 내역, 결제 / 환불 / 매칭 / 투표 내역 조회  
-- 구장 상세 정보 조회  
-- 심판 정산 내역 조회  
+-- station_detail_seq 조회
+select d.seq, d.track, s.station_id 
+from station_detail d 
+inner join station s on d.station_seq = s.seq
+where station_id = '서울역' 
+or station_id = '광명역'
+or station_id = '천안아산역'
+or station_id = '대전역';
 
----
+-- 스케줄 상세 등록
+insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq)
+values('00:32:00', '서울역', '광명역', '2025-06-07 08:10:00', ADDTIME('2025-06-07 08:10:00', '00:32:00'), 1, 2);
+insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq)
+values('00:15:00', '광명역', '천안아산역', '2025-06-07 08:44:00', ADDTIME('2025-06-07 08:44:00', '00:15:00'), 16, 2);
+insert into schedules_detail(taken_times, departure, destination, departure_time, destination_time, station_detail_seq, schedules_seq)
+values('00:25:00', '천안아산역', '대전역', '2025-06-07 09:01:00', ADDTIME('2025-06-07 09:01:00', '00:25:00'), 7, 2);
 
-## 📁 WBS / 작업 흐름 & 진행 현황  
+-- 좌석 등록은 앞에 train점유 및 track점유만 정상적으로 하고 나면 스케줄 상세 등록에 맞는 seq 좌석을 모두 한번에 등록
+-- 가능하므로 별도의 검증이 필요하지 않음.
+INSERT INTO seat_management(is_available, price, seat_seq, schedules_detail_seq)
+VALUES 
+('true', 3000, 1, 3),
+('true', 1000, 1, 4),
+('true', 2500, 1, 5),
+...
+('true', 2500, 50, 5);
+commit;
 
-| #  | 단계 / 작업 항목                      | 산출물 / 설명                      | 담당자       | 진행률 |
-|---:|-------------------------------------|-----------------------------------|--------------|--------:|
-| 1  | 요구사항 정의 & 기능 명세 작성       | 기능 목록 + 요구조건 문서 작성         | 수림, 준형, 건하, 민정 | 100% ✅ |
-| 2  | 문서 구조 설정 & 리포지토리 초기 구성  | README + 폴더 구조 설계 및 초기 세팅   | 민정         | 100% ✅ |
-| 3  | DB 모델링 & 설계                    | ERD, 주요 테이블 구조 정의             | 준형, 수림    | 100% ✅ |
-| 4  | SQL 스크립트 작성 (DDL / DML)         | 테이블 생성, 초기 / 테스트 데이터 삽입  | 준형, 수림    | 100% ✅ |
-| 5  | 요구사항 명세 문서화                | requirements 명세, 기능/쿼리 명세 정리 | 민정         | 100% ✅ |
-| 6  | 테스트 케이스 설계 및 작성            | 쿼리 테스트 시나리오 + 검증 케이스 작성 | 건하, 수림    | 100% ✅ |
-| 7  | README + 프로젝트 설명 정리           | 프로젝트 개요, 배경, 기능 요약 등 정리  | 전원         | 100% ✅ |
+```
+</details>
 
----
+</div>
+</details>
 
-## 🏁 프로젝트 요약 한 줄  
-데이터베이스 중심 설계 + SQL + 자동화 로직으로 “누구나, 언제든, 혼자여도” 편하게 참여 가능한 스마트 풋살 경기 매칭 & 정산 & 히스토리 플랫폼.
-
----
-
-## 📄 저작권 & 라이선스  
-Copyright © 2025 be23-1st-team2-DB / Futsal-MatchDB Team. All rights reserved.
 
 
 
