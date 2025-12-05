@@ -75,7 +75,7 @@ https://www.erdcloud.com/d/xgt9LzrHYkuyy4dbG
 ### 5-1. DDL (데이터 정의어)
 
 <details>
-  <summary>-- 1. 사용자(심판, 회원)</summary>
+  <summary>1. 사용자(심판, 회원)</summary>
 
 사용자 테이블은 심판과 회원 테이블의 부모테이블로 로그인을 하기 위한 정보들을 가지고 있습니다.
 회원은 축구 매칭 서비스를 이용하는 회원입니다.
@@ -123,7 +123,7 @@ CREATE TABLE referee (
 </details>
 
 <details>
-  <summary>-- 2. 심판</summary>
+  <summary>2. 심판</summary>
 
 심판은 구장과 시간을 정해서 경기를 주선합니다.
 경기가 성사된 후에는 정산금을 받습니다.
@@ -164,7 +164,7 @@ CREATE TABLE matches (
 </details>
 
 <details>
-  <summary>-- 3. 회원</summary>
+  <summary>3. 회원</summary>
 
 회원은 계획된 경기에 신청하며, 결제를 하고, 경기가 성사되면 해당 경기의 pom을 선정합니다. 만약 인원이 모이지 않아 경기가 취소될 경우 환불을 받습니다.
 
@@ -204,7 +204,7 @@ CREATE TABLE pom_vote (
 </details>
 
 <details>
-  <summary>-- 4. 구장</summary>
+  <summary>4. 구장</summary>
 
 구장은 구장, 구장 옵션, 구장 옵션별 상세 테이블이 존재합니다.
 구장이 옵션을 동적으로 추가할 수 있도록 설계하여, 각 구장마다 다양한 옵션이 존재할 수 있습니다.
