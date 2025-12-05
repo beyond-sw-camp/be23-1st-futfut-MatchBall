@@ -300,10 +300,10 @@ END;
 DELIMITER ;
 
 ```
+</details>
 
-
-
-
+</div>
+</details>
 
 <details>
 <summary><b>심판</b></summary>
@@ -458,7 +458,7 @@ DELIMITER ;
 <summary><b>구장</b></summary>
 
 ```sql
---구장등록
+// 구장등록
 
 
 DROP PROCEDURE IF EXISTS 구장등록;
@@ -493,6 +493,38 @@ BEGIN
 END //
 
 DELIMITER ;
+
+```
+
+```sql
+//구장 옵션 생성
+
+DELIMITER //
+
+CREATE PROCEDURE CreateStadiumOption (
+    IN p_stadiumID BIGINT,
+    IN p_optionID BIGINT
+)
+BEGIN
+    -- 이미 존재하는지 확인
+    IF EXISTS (
+        SELECT 1
+        FROM stadium_detail_option
+        WHERE stadiumID = p_stadiumID
+          AND optionID = p_optionID
+    ) THEN
+        SELECT '이미 등록된 옵션입니다.' AS result;
+
+    ELSE
+        -- 신규 등록
+        INSERT INTO stadium_detail_option (stadiumID, optionID)
+        VALUES (p_stadiumID, p_optionID);
+
+        SELECT '구장 옵션이 성공적으로 등록되었습니다.' AS result;
+    END IF;
+END 
+
+// DELIMITER ;
 
 ```
 </details>
@@ -562,6 +594,8 @@ BEGIN
 END //
 
 DELIMITER ;
+
+```
 
 ```sql
 // 경기신청 불가
@@ -939,6 +973,9 @@ DELIMITER ;
 
 ## 6. 소감
 
+### 정민정
+README가 프로젝트의 ‘첫인상’이라는 부담감 때문에 내용 구성과 흐름을 어떻게 잡을지 고민이 많았습니다.
+설치 방법 / 사용법 / 기능 설명 / 기술 스택 / 프로젝트 소개 등을 Markdown 형식으로 깔끔하게 정리하는 게 생각보다 어렵고 번거로웠습니다.
 
 ### 박준형
 첫 프로젝트라서 모든 게 서툴렀고, 딜레이 될 거라 예상하지 못했던
@@ -947,7 +984,7 @@ ERD 설계에서 큰 어려움을 겪었습니다.
 무사히 마무리할 수 있었습니다!
 
 ### 이수림
-ERD설계에서 대부분 시간을 쓰게되면서 다른부분에 신경쓰지 못한 것이 아쉽습니다. 전반적인 것 보다일부분에 집중했던 것 같습니다. 
+ERD설계에서 대부분 시간을 쓰게되면서 다른부분에 신경쓰지 못한 것이 아쉽습니다. 전반적인 흐름이나 퀄리티보다는 일부분에 집중했던 것 같습니다. 
 ERD때 최대한 배운 것을 활용하려 했고, 그 과정에서 개념이 다시 정립된 부분이 있었습니다. 협력하고 도움 받으며 마무리 한 것 같습니다.
 
 
@@ -955,11 +992,6 @@ ERD때 최대한 배운 것을 활용하려 했고, 그 과정에서 개념이 �
 시간이 많을 줄 알았는데 일정을 제대로 관리하지 못한부분이 아쉽습니다.
 WBS와 요구사항 명세서를 부실하게 작성해 ERD 설계를 하면서 돌아가는 일이 많이 시간이 부족했던 것 같습니다.
 그래도 대화하며 ERD설계를 완성하고 원하는 기능들을 구현하면서 많이 배울 수 있었습니다.
-
-### 정민정
-README가 프로젝트의 ‘첫인상’이라는 부담감 때문에 내용 구성과 흐름을 어떻게 잡을지 고민이 많았습니다.
-설치 방법 / 사용법 / 기능 설명 / 기술 스택 / 프로젝트 소개 등을 Markdown 형식으로 깔끔하게 정리하는 게 생각보다 어렵고 번거로웠습니다.
-
 
 </div>
 </details>
