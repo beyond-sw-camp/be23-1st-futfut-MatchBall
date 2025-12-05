@@ -300,12 +300,9 @@ END;
 DELIMITER ;
 
 ```
-</details>
 
-</div>
-</details>
 
-<details>
+
 
 
 <details>
@@ -953,6 +950,7 @@ ERD 설계에서 큰 어려움을 겪었습니다.
 무사히 마무리할 수 있었습니다!
 
 ### 이수림
+
 
 
 ### 황건하
